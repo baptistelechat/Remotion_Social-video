@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+}
+
+.control > #controlTitle {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}

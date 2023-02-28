@@ -1,0 +1,29 @@
+{
+  "name": "remotion_using_vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "video": "npx remotion preview src/components/remotion/index.ts"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@mantine/core": "^5.10.4",
+    "@mantine/hooks": "^5.10.4",
+    "@remotion/cli": "^3.3.54",
+    "@remotion/player": "^3.3.54",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^3.3.54"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}

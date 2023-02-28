@@ -1,0 +1,7 @@
+#video {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
