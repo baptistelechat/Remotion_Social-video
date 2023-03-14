@@ -6,13 +6,9 @@ import {
 } from "remotion";
 
 import "../../assets/style/video.css";
+import { IVideo } from "../../data/interfaces/IVideo";
 
-interface IVideoProps {
-  title: string;
-  bgColor: string;
-}
-
-const Video = (props: IVideoProps) => {
+const Video = (props: IVideo) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -24,7 +20,8 @@ const Video = (props: IVideoProps) => {
     <AbsoluteFill
       id="video"
       style={{
-        backgroundColor: props.bgColor,
+        color: props.theme.textColor,
+        backgroundColor: props.theme.bgColor,
       }}
     >
       <h1
@@ -34,6 +31,13 @@ const Video = (props: IVideoProps) => {
       >
         Hello {props.title}!
       </h1>
+      <p
+        style={{
+          color: props.theme.accentColor,
+        }}
+      >
+        Sous-titre
+      </p>
     </AbsoluteFill>
   );
 };
