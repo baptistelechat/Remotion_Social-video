@@ -13,10 +13,11 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@mantine/core": "^6.0.2",
-    "@mantine/hooks": "^6.0.2",  
+    "@mantine/hooks": "^6.0.2",
     "@mantine/prism": "^6.0.2",
     "@remotion/cli": "^3.3.54",
     "@remotion/player": "^3.3.54",
+    "@tabler/icons-react": "^2.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remotion": "^3.3.54"

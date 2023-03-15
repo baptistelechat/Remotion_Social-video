@@ -1,8 +1,9 @@
 export interface IVideo {
-  title: string;
+  userName: string;
   theme: {
     bgColor: string;
     textColor: string;
     accentColor: string;
   };
+  safeZone: boolean;
 }

@@ -7,12 +7,13 @@ const VideoPlayer = (props: IVideo) => {
     <Player
       component={Video}
       inputProps={{
-        title: props.title,
+        userName: props.userName,
         theme: {
           bgColor: props.theme.bgColor,
           textColor: props.theme.textColor,
           accentColor: props.theme.accentColor,
         },
+        safeZone: props.safeZone,
       }}
       durationInFrames={90}
       compositionWidth={1080}

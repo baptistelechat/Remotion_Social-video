@@ -12,12 +12,13 @@ export const RemotionRoot = () => {
         fps={30}
         id="Video"
         defaultProps={{
-          title: "World",
+          userName: "UserName",
           theme: {
             bgColor: "#ffffff",
             textColor: "#293845",
             accentColor: "#26c9d1",
           },
+          safeZone: true,
         }}
       />
     </>

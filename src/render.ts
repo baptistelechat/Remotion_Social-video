@@ -8,12 +8,13 @@ import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
 const prompt: IVideo = {
-  title: "Baptiste",
+  userName: "Baptiste",
   theme: {
     bgColor: "#ffc929",
     textColor: "#242324",
     accentColor: "#05ff7e",
   },
+  safeZone: false,
 };
 
 export const render = async () => {

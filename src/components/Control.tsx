@@ -1,36 +1,39 @@
-import { TextInput, ColorInput } from "@mantine/core";
+import { TextInput, ColorInput, Switch } from "@mantine/core";
 import { Prism } from "@mantine/prism";
 import "../assets/style/Control.css";
 
 interface IControlProps {
-  title: string;
-  setTitle: React.Dispatch<React.SetStateAction<string>>;
+  userName: string;
+  setUserName: React.Dispatch<React.SetStateAction<string>>;
   bgColor: string;
   setBgColor: React.Dispatch<React.SetStateAction<string>>;
   textColor: string;
   setTextColor: React.Dispatch<React.SetStateAction<string>>;
   accentColor: string;
   setAccentColor: React.Dispatch<React.SetStateAction<string>>;
+  safeZone: boolean;
+  setSafeZone: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Control = (props: IControlProps) => {
   const demoCode = `
 {
-  title: "${props.title}",
+  userName: "${props.userName}",
   theme: {
     bgColor: "${props.bgColor}",
     textColor: "${props.textColor}",
     accentColor: "${props.accentColor}",
   },
+  safeZone : false
 }`;
 
   return (
     <div className="control">
       <p id="controlTitle">Contrôle</p>
       <TextInput
-        label={"Titre"}
-        value={props.title}
-        onChange={(event) => props.setTitle(event.currentTarget.value)}
+        label={"Nom d'utilisateur"}
+        value={props.userName}
+        onChange={(event) => props.setUserName(event.currentTarget.value)}
         style={{
           marginBottom: "8px",
         }}
@@ -50,8 +53,15 @@ const Control = (props: IControlProps) => {
         value={props.accentColor}
         onChange={props.setAccentColor}
       />
+      <Switch
+        className={"safeZoneSwitch"}
+        checked={props.safeZone}
+        onChange={(event) => props.setSafeZone(event.currentTarget.checked)}
+        color={"dark"}
+        label={"Afficher la safe zone ?"}
+      />
       <Prism
-        className={"prompt"}
+        id={"prompt"}
         language="json"
         copyLabel="Copier le code dans le presse-papiers"
         copiedLabel="Code copié dans le presse-papiers"
