@@ -7,12 +7,12 @@ import {
 import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
-const params: IVideo = {
-  title: "World",
+const prompt: IVideo = {
+  title: "Baptiste",
   theme: {
-    bgColor: "#ffffff",
-    textColor: "#293845",
-    accentColor: "#ffcc00",
+    bgColor: "#ffc929",
+    textColor: "#242324",
+    accentColor: "#05ff7e",
   },
 };
 
@@ -35,7 +35,7 @@ export const render = async () => {
   );
 
   // Parametrize the video by passing arbitrary props to your component.
-  const inputProps = params;
+  const inputProps = prompt;
   // Extract all the compositions you have defined in your project
   // from the webpack bundle.
   const comps = await getCompositions(bundleLocation, {

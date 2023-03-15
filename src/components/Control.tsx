@@ -1,4 +1,6 @@
 import { TextInput, ColorInput } from "@mantine/core";
+import { Prism } from "@mantine/prism";
+import "../assets/style/Control.css";
 
 interface IControlProps {
   title: string;
@@ -12,6 +14,16 @@ interface IControlProps {
 }
 
 const Control = (props: IControlProps) => {
+  const demoCode = `
+{
+  title: "${props.title}",
+  theme: {
+    bgColor: "${props.bgColor}",
+    textColor: "${props.textColor}",
+    accentColor: "${props.accentColor}",
+  },
+}`;
+
   return (
     <div className="control">
       <p id="controlTitle">Contrôle</p>
@@ -38,6 +50,15 @@ const Control = (props: IControlProps) => {
         value={props.accentColor}
         onChange={props.setAccentColor}
       />
+      <Prism
+        className={"prompt"}
+        language="json"
+        copyLabel="Copier le code dans le presse-papiers"
+        copiedLabel="Code copié dans le presse-papiers"
+        withLineNumbers
+      >
+        {demoCode}
+      </Prism>
     </div>
   );
 };
