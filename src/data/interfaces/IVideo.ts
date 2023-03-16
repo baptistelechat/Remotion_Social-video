@@ -1,4 +1,5 @@
 export interface IVideo {
+  bookType: string;
   userName: string;
   theme: {
     bgColor: string;

@@ -30,6 +30,7 @@ const Video = (props: IVideo) => {
       >
         <Sequence from={0} layout="none">
           <NewBookTitle
+            bookType={props.bookType}
             gradient={{
               from: props.theme.textColor,
               to: props.theme.accentColor,
@@ -39,8 +40,8 @@ const Video = (props: IVideo) => {
 
         <Sequence from={30} layout="none">
           <UserName
-            accentColor={props.theme.accentColor}
             userName={props.userName}
+            accentColor={props.theme.accentColor}
           />
         </Sequence>
       </div>

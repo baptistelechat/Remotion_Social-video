@@ -4,6 +4,7 @@ import "./App.css";
 import Control from "./components/Control";
 
 function App() {
+  const [bookType, setBookType] = useState("Mangas");
   const [userName, setUserName] = useState("JohnDoe");
   const [bgColor, setBgColor] = useState("#ffffff");
   const [textColor, setTextColor] = useState("#3C2945");
@@ -13,6 +14,8 @@ function App() {
   return (
     <div className="app">
       <Control
+        bookType={bookType}
+        setBookType={setBookType}
         userName={userName}
         setUserName={setUserName}
         bgColor={bgColor}
@@ -26,6 +29,7 @@ function App() {
       />
       <VideoPlayer
         userName={userName}
+        bookType={bookType}
         theme={{
           bgColor,
           textColor,

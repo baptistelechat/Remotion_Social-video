@@ -8,6 +8,7 @@ import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
 const prompt: IVideo = {
+  bookType:"Mangas",
   userName: "Baptiste",
   theme: {
     bgColor: "#ffc929",

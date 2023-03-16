@@ -2,8 +2,8 @@ import { Text, ThemeIcon } from "@mantine/core";
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { IconBrandVinted } from "@tabler/icons-react";
 interface IUserNameProps {
-  accentColor: string;
   userName: string;
+  accentColor: string;
 }
 
 const UserName = (props: IUserNameProps) => {

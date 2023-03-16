@@ -1,8 +1,11 @@
-import { TextInput, ColorInput, Switch } from "@mantine/core";
+import { TextInput, ColorInput, Switch, Select } from "@mantine/core";
 import { Prism } from "@mantine/prism";
 import "../assets/style/Control.css";
+import { BookTypes } from "../data/constants/BookTypes";
 
 interface IControlProps {
+  bookType: string;
+  setBookType: React.Dispatch<React.SetStateAction<string>>;
   userName: string;
   setUserName: React.Dispatch<React.SetStateAction<string>>;
   bgColor: string;
@@ -18,6 +21,7 @@ interface IControlProps {
 const Control = (props: IControlProps) => {
   const demoCode = `
 {
+  bookType:"${props.bookType}",
   userName: "${props.userName}",
   theme: {
     bgColor: "${props.bgColor}",
@@ -30,6 +34,16 @@ const Control = (props: IControlProps) => {
   return (
     <div className="control">
       <p id="controlTitle">Contrôle</p>
+      <Select
+        label="Type de livre"
+        value={props.bookType as string | null}
+        onChange={
+          props.setBookType as React.Dispatch<
+            React.SetStateAction<string | null>
+          >
+        }
+        data={BookTypes.map((bookType) => bookType.type)}
+      />
       <TextInput
         label={"Nom d'utilisateur"}
         value={props.userName}

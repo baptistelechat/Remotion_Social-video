@@ -7,6 +7,7 @@ const VideoPlayer = (props: IVideo) => {
     <Player
       component={Video}
       inputProps={{
+        bookType: props.bookType,
         userName: props.userName,
         theme: {
           bgColor: props.theme.bgColor,

@@ -1,7 +1,9 @@
 import { Text } from "@mantine/core";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { BookTypes } from "../../../data/constants/BookTypes";
 
 interface INewBookTitleProps {
+  bookType: string;
   gradient: {
     from: string;
     to: string;
@@ -22,6 +24,13 @@ const NewBookTitle = (props: INewBookTitleProps) => {
     extrapolateRight: "clamp",
   });
 
+  const newBookGender = () => {
+    const gender = BookTypes.filter(
+      (bookType) => bookType.type === props.bookType
+    )[0].gender;
+    return gender === "Masculin" ? "Nouveaux" : "Nouvelles";
+  };
+
   return (
     <Text
       id={"newBookTitle"}
@@ -31,7 +40,7 @@ const NewBookTitle = (props: INewBookTitleProps) => {
         transform: `scale(${scale}) translateX(${translateX}px)`,
       }}
     >
-      Nouveaux Mangas à vendre !
+      {`${newBookGender()} ${props.bookType} à vendre !`}
     </Text>
   );
 };
