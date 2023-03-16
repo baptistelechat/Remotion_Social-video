@@ -1,5 +1,5 @@
 import { Text } from "@mantine/core";
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 
 interface INewBookTitleProps {
   gradient: {
@@ -11,11 +11,15 @@ interface INewBookTitleProps {
 
 const NewBookTitle = (props: INewBookTitleProps) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, width } = useVideoConfig();
 
   const scale = spring({
     fps,
     frame,
+  });
+
+  const translateX = interpolate(frame, [0, 100, 110], [0, 0, -width], {
+    extrapolateRight: "clamp",
   });
 
   return (
@@ -24,7 +28,7 @@ const NewBookTitle = (props: INewBookTitleProps) => {
       variant="gradient"
       gradient={{ from: props.gradient.from, to: props.gradient.to, deg: 45 }}
       style={{
-        transform: `scale(${scale})`,
+        transform: `scale(${scale}) translateX(${translateX}px)`,
       }}
     >
       Nouveaux Mangas à vendre !

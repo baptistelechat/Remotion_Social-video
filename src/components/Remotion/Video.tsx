@@ -6,43 +6,45 @@ import UserName from "./components/UserName";
 
 const Video = (props: IVideo) => {
   return (
-      <AbsoluteFill
-        id="video"
+    <AbsoluteFill
+      id="video"
+      style={{
+        color: props.theme.textColor,
+        backgroundColor: props.theme.accentColor,
+      }}
+    >
+      {props.safeZone ? (
+        <>
+          <div id={"topSafeZone"} />
+          <div id={"rightSafeZone"} />
+          <div id={"bottomSafeZone"} />
+        </>
+      ) : (
+        <></>
+      )}
+      <div
+        id={"innerBackground"}
         style={{
-          color: props.theme.textColor,
-          backgroundColor: props.theme.accentColor,
+          backgroundColor: props.theme.bgColor,
         }}
       >
-        {props.safeZone ? (
-          <>
-            <div id={"topSafeZone"} />
-            <div id={"rightSafeZone"} />
-            <div id={"bottomSafeZone"} />
-          </>
-        ) : (
-          <></>
-        )}
-        <div
-          id={"innerBackground"}
-          style={{
-            backgroundColor: props.theme.bgColor,
-          }}
-        >
+        <Sequence from={0} layout="none">
           <NewBookTitle
             gradient={{
               from: props.theme.textColor,
               to: props.theme.accentColor,
             }}
           />
+        </Sequence>
 
-          <Sequence from={30} layout="none">
-            <UserName
-              accentColor={props.theme.accentColor}
-              userName={props.userName}
-            />
-          </Sequence>
-        </div>
-      </AbsoluteFill>
+        <Sequence from={30} layout="none">
+          <UserName
+            accentColor={props.theme.accentColor}
+            userName={props.userName}
+          />
+        </Sequence>
+      </div>
+    </AbsoluteFill>
   );
 };
 
