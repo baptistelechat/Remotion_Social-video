@@ -1,6 +1,7 @@
 export interface IVideo {
-  bookType: string;
   userName: string;
+  bookType: string;
+  hashtags: string[];
   theme: {
     bgColor: string;
     textColor: string;

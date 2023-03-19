@@ -1,11 +1,21 @@
-import { TextInput, ColorInput, Switch, Select } from "@mantine/core";
-import { Prism } from "@mantine/prism";
+import {
+  TextInput,
+  ColorInput,
+  Switch,
+  Select,
+  MultiSelect,
+} from "@mantine/core";
 import "../assets/style/Control.css";
 import { BookTypes } from "../data/constants/BookTypes";
+import { IBookHashtags } from "../data/interfaces/IBookHashtag";
 
 interface IControlProps {
   bookType: string;
   setBookType: React.Dispatch<React.SetStateAction<string>>;
+  hashtagsList: IBookHashtags[];
+  setHashtagsList: React.Dispatch<React.SetStateAction<IBookHashtags[]>>;
+  hashtags: string[];
+  setHashtags: React.Dispatch<React.SetStateAction<string[]>>;
   userName: string;
   setUserName: React.Dispatch<React.SetStateAction<string>>;
   bgColor: string;
@@ -19,21 +29,17 @@ interface IControlProps {
 }
 
 const Control = (props: IControlProps) => {
-  const demoCode = `
-{
-  bookType:"${props.bookType}",
-  userName: "${props.userName}",
-  theme: {
-    bgColor: "${props.bgColor}",
-    textColor: "${props.textColor}",
-    accentColor: "${props.accentColor}",
-  },
-  safeZone : false
-}`;
-
   return (
     <div className="control">
       <p id="controlTitle">Contrôle</p>
+      <TextInput
+        label={"Nom d'utilisateur"}
+        value={props.userName}
+        onChange={(event) => props.setUserName(event.currentTarget.value)}
+        style={{
+          marginBottom: "8px",
+        }}
+      />
       <Select
         label="Type de livre"
         value={props.bookType as string | null}
@@ -44,13 +50,22 @@ const Control = (props: IControlProps) => {
         }
         data={BookTypes.map((bookType) => bookType.type)}
       />
-      <TextInput
-        label={"Nom d'utilisateur"}
-        value={props.userName}
-        onChange={(event) => props.setUserName(event.currentTarget.value)}
-        style={{
-          marginBottom: "8px",
+      <MultiSelect
+        label="#Hashtags"
+        placeholder="#LoremIpsum"
+        data={props.hashtagsList}
+        value={props.hashtags}
+        searchable
+        creatable
+        clearable
+        onChange={props.setHashtags}
+        getCreateLabel={(query) => `+ Create ${query}`}
+        onCreate={(query) => {
+          const item = { value: query, label: query, group: "Custom" };
+          props.setHashtagsList((current) => [...current, item]);
+          return item;
         }}
+        maxSelectedValues={6}
       />
       <ColorInput
         label={"Background Color"}
@@ -74,15 +89,6 @@ const Control = (props: IControlProps) => {
         color={"dark"}
         label={"Afficher la safe zone ?"}
       />
-      <Prism
-        id={"prompt"}
-        language="json"
-        copyLabel="Copier le code dans le presse-papiers"
-        copiedLabel="Code copié dans le presse-papiers"
-        withLineNumbers
-      >
-        {demoCode}
-      </Prism>
     </div>
   );
 };

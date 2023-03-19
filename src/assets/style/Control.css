@@ -1,6 +1,7 @@
 .control {
   display: flex;
   flex-direction: column;
+  width: calc((1080px / 3));
 }
 
 #controlTitle {
@@ -10,9 +11,5 @@
 }
 
 .safeZoneSwitch {
-  margin-top: 1rem;
-}
-
-#prompt {
   margin-top: 1rem;
 }

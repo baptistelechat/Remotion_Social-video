@@ -13,7 +13,8 @@ export const RemotionRoot = () => {
         id="Video"
         defaultProps={{
           userName: "UserName",
-          bookType:"Mangas",
+          bookType: "Mangas",
+          hashtags: ["Lorem", "Ipsum"],
           theme: {
             bgColor: "#ffffff",
             textColor: "#293845",

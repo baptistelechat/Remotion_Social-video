@@ -152,3 +152,19 @@ video {
   height: 80px;
   width: 80px;
 }
+
+#hashtags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  bottom: calc(20% + 16px);
+  left: 64px;
+  text-align: left;
+  font-style: italic;
+  font-size: 40px;
+  font-weight: 700;
+  max-width: 80%;
+}

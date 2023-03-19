@@ -8,12 +8,13 @@ import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
 const prompt: IVideo = {
-  bookType:"Mangas",
-  userName: "Baptiste",
+  bookType: "Mangas",
+  hashtags: ["Lorem", "Ipsum"],
+  userName: "JohnDoe",
   theme: {
-    bgColor: "#ffc929",
-    textColor: "#242324",
-    accentColor: "#05ff7e",
+    bgColor: "#ffffff",
+    textColor: "#3C2945",
+    accentColor: "#9820D1",
   },
   safeZone: false,
 };

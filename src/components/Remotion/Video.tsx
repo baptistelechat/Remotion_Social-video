@@ -1,6 +1,7 @@
 import { AbsoluteFill, Sequence } from "remotion";
 import "../../assets/style/Video.css";
 import { IVideo } from "../../data/interfaces/IVideo";
+import Hashtags from "./components/Hashtags";
 import NewBookTitle from "./components/NewBookTitle";
 import UserName from "./components/UserName";
 
@@ -35,6 +36,14 @@ const Video = (props: IVideo) => {
               from: props.theme.textColor,
               to: props.theme.accentColor,
             }}
+          />
+        </Sequence>
+
+        <Sequence from={15} layout="none">
+          <Hashtags
+            textColor={props.theme.textColor}
+            accentColor={props.theme.accentColor}
+            hashtags={props.hashtags}
           />
         </Sequence>
 
