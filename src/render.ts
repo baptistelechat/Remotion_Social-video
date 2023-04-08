@@ -11,6 +11,11 @@ const prompt: IVideo = {
   bookType: "Mangas",
   hashtags: ["Lorem", "Ipsum"],
   userName: "JohnDoe",
+  gifs: [
+    "https://media2.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
+    "https://media1.giphy.com/media/heIX5HfWgEYlW/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
+  ],
   theme: {
     bgColor: "#ffffff",
     textColor: "#3C2945",

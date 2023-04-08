@@ -12,15 +12,20 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
+    "@giphy/js-fetch-api": "^4.7.1",
+    "@giphy/react-components": "^6.7.0",
+    "@mantine/carousel": "^6.0.6",
     "@mantine/core": "^6.0.2",
     "@mantine/hooks": "^6.0.2",
     "@mantine/prism": "^6.0.2",
-    "@remotion/cli": "^3.3.54",
-    "@remotion/player": "^3.3.54",
+    "@remotion/cli": "3.3.82",
+    "@remotion/gif": "3.3.82",
+    "@remotion/player": "3.3.82",
     "@tabler/icons-react": "^2.10.0",
+    "embla-carousel-react": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remotion": "^3.3.54"
+    "remotion": "3.3.82"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

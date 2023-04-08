@@ -168,3 +168,21 @@ video {
   font-weight: 700;
   max-width: 80%;
 }
+
+#gifs > canvas:nth-child(1) {
+  position: absolute;
+  top: calc(10% + 16px);
+  right: 64px;
+}
+
+#gifs > canvas:nth-child(2) {
+  position: absolute;
+  bottom: calc(20% + 40px);
+  left: 64px;
+}
+
+#gifs > canvas:nth-child(3) {
+  position: absolute;
+  bottom: calc(20% + 40px);
+  right: calc(20% + 16px);
+}

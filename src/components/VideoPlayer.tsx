@@ -10,6 +10,7 @@ const VideoPlayer = (props: IVideo) => {
         userName: props.userName,
         bookType: props.bookType,
         hashtags: props.hashtags,
+        gifs: props.gifs,
         theme: {
           bgColor: props.theme.bgColor,
           textColor: props.theme.textColor,

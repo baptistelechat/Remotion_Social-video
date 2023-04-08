@@ -8,6 +8,9 @@ interface IPromptProps {
   bgColor: string;
   textColor: string;
   accentColor: string;
+  gif1: string;
+  gif2: string;
+  gif3: string;
 }
 
 const Prompt = (props: IPromptProps) => {
@@ -16,6 +19,11 @@ const Prompt = (props: IPromptProps) => {
   userName: "${props.userName}",
   bookType:"${props.bookType}",
   hashtags:[${props.hashtags.map((hashtag, index) => `"${hashtag}"`)}],
+  gif:[
+    "${props.gif1}",
+    "${props.gif2}",
+    "${props.gif3}"
+  ],
   theme: {
     bgColor: "${props.bgColor}",
     textColor: "${props.textColor}",

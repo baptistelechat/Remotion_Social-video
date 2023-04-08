@@ -59,10 +59,6 @@ export const BookTypes: IBookType[] = [
     gender: "Masculin",
   },
   {
-    type: "Livres de développement personnel",
-    gender: "Masculin",
-  },
-  {
     type: "Livres d'histoire",
     gender: "Masculin",
   },
