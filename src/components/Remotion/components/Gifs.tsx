@@ -48,21 +48,6 @@ const Gifs = (props: IGifsProps) => {
         }}
         fit="contain"
       />
-      {/* <img
-        id="gif1"
-        src={props.gifs[0]}
-        style={{ transform: `scale(${scale}) ` }}
-      />
-      <img
-        id="gif2"
-        src={props.gifs[1]}
-        style={{ transform: `scale(${scale}) ` }}
-      />
-      <img
-        id="gif3"
-        src={props.gifs[2]}
-        style={{ transform: `scale(${scale}) ` }}
-      /> */}
     </div>
   );
 };

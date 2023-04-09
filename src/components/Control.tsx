@@ -4,19 +4,22 @@ import {
   Switch,
   Select,
   MultiSelect,
-  Radio,
-  Group,
 } from "@mantine/core";
 import "../assets/style/Control.css";
 import { BookTypes } from "../data/constants/BookTypes";
 import { IBookHashtags } from "../data/interfaces/IBookHashtag";
-import { Carousel } from "@giphy/react-components";
-import { GiphyFetch } from "@giphy/js-fetch-api";
-import { useState } from "react";
 import GiphySearch from "./Remotion/GiphySearch";
 
 interface IControlProps {
+  bookName: string;
+  setBookName: React.Dispatch<React.SetStateAction<string>>;
+  author: string;
+  setAuthor: React.Dispatch<React.SetStateAction<string>>;
   bookType: string;
+  image1: string;
+  setImage1: React.Dispatch<React.SetStateAction<string>>;
+  image2: string;
+  setImage2: React.Dispatch<React.SetStateAction<string>>;
   setBookType: React.Dispatch<React.SetStateAction<string>>;
   hashtagsList: IBookHashtags[];
   setHashtagsList: React.Dispatch<React.SetStateAction<IBookHashtags[]>>;
@@ -35,6 +38,7 @@ interface IControlProps {
   setGif1: React.Dispatch<React.SetStateAction<string>>;
   setGif2: React.Dispatch<React.SetStateAction<string>>;
   setGif3: React.Dispatch<React.SetStateAction<string>>;
+  setGif4: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Control = (props: IControlProps) => {
@@ -42,7 +46,6 @@ const Control = (props: IControlProps) => {
     <div className="control">
       <div className="controlInput">
         <p id="controlTitle">Contrôle</p>
-
         <TextInput
           label={"Nom d'utilisateur"}
           value={props.userName}
@@ -76,7 +79,7 @@ const Control = (props: IControlProps) => {
             props.setHashtagsList((current) => [...current, item]);
             return item;
           }}
-          maxSelectedValues={6}
+          maxSelectedValues={5}
         />
         <ColorInput
           label={"Background Color"}
@@ -106,6 +109,44 @@ const Control = (props: IControlProps) => {
         <GiphySearch label={"Gif n°1"} setGifs={props.setGif1} />
         <GiphySearch label={"Gif n°2"} setGifs={props.setGif2} />
         <GiphySearch label={"Gif n°3"} setGifs={props.setGif3} />
+      </div>
+      <div className="controlSellBook">
+        <p id="controlTitle">Livre à vendre</p>
+        <TextInput
+          label={"Titre"}
+          value={props.bookName}
+          onChange={(event) => props.setBookName(event.currentTarget.value)}
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+        <TextInput
+          label={"Auteur"}
+          value={props.author}
+          onChange={(event) => props.setAuthor(event.currentTarget.value)}
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+        <TextInput
+          label={"Image n°1"}
+          placeholder={"URL image n°1"}
+          value={props.image1}
+          onChange={(event) => props.setImage1(event.currentTarget.value)}
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+        <TextInput
+          label={"Image n°2"}
+          placeholder={"URL image n°2"}
+          value={props.image2}
+          onChange={(event) => props.setImage2(event.currentTarget.value)}
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+        <GiphySearch label={"Gif n°4"} setGifs={props.setGif4} />
       </div>
     </div>
   );

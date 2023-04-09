@@ -8,13 +8,22 @@ import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
 const prompt: IVideo = {
+  userName: "JohnDoe",
+  bookInfo: {
+    title: "LoremIpsum LoremIpsum LoremIpsum",
+    author: "John Doe",
+    images: [
+      "https://picsum.photos/seed/manga/1080/1920",
+      "https://picsum.photos/seed/manga/1080/1920",
+    ],
+  },
   bookType: "Mangas",
   hashtags: ["Lorem", "Ipsum"],
-  userName: "JohnDoe",
   gifs: [
-    "https://media2.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
-    "https://media2.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
-    "https://media1.giphy.com/media/heIX5HfWgEYlW/giphy.gif?cid=101f51ddfleaiyfu4mt86fbyuq43tfphs6yieb8kqdbkzfdk&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/Qyml5wziJeHreuOdzu/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
+    "https://media3.giphy.com/media/Q7pDtp0bIvJFgRsHHN/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
+    "https://media4.giphy.com/media/ge9Ep3RJLGlNEn0UfC/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
+    "https://media4.giphy.com/media/dup6jDyj6Yk6z5M8nN/giphy.gif?cid=101f51ddte6iw3ov1vw449uc6xiab3vpkktse5njjssvvz9i&rid=giphy.gif&ct=s",
   ],
   theme: {
     bgColor: "#ffffff",

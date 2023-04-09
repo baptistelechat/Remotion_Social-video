@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextInput, Select, ActionIcon, Group, Radio } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { IGif } from "../../utils/interface/IGif";
-import { IconSearch } from "@tabler/icons-react";
+import { IconGif, IconSearch } from "@tabler/icons-react";
 
 interface IGiphySearch {
   label: string;
@@ -20,7 +20,6 @@ const GiphySearch = (props: IGiphySearch) => {
       `https://api.giphy.com/v1/${gifType}/search?api_key=${api_key}&q=${searchTerm}&limit=20`
     );
     const json = await response.json();
-    console.log(json.data);
     setGifsList(json.data);
   };
 
@@ -44,7 +43,11 @@ const GiphySearch = (props: IGiphySearch) => {
           label={props.label}
           placeholder="Search for GIFs"
           value={searchTerm}
+          icon={<IconGif />}
           onChange={(event) => setSearchTerm(event.target.value)}
+          style={{
+            width: "100%",
+          }}
           // onKeyPress={(event) => {
           //   if (event.key === "Enter") {
           //     handleSearch();
@@ -71,16 +74,13 @@ const GiphySearch = (props: IGiphySearch) => {
 
       {gifsList.length !== 0 ? (
         <Carousel
-          height={125}
+          height={110}
           slideGap="sm"
           controlsOffset="xs"
           align={"center"}
           withControls={false}
           dragFree
           loop
-          style={{
-            marginBottom: gifsList.length !== 0 ? "1rem" : 0,
-          }}
         >
           {gifsList.map((gif: IGif) => (
             <Carousel.Slide

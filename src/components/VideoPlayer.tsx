@@ -8,6 +8,7 @@ const VideoPlayer = (props: IVideo) => {
       component={Video}
       inputProps={{
         userName: props.userName,
+        bookInfo: props.bookInfo,
         bookType: props.bookType,
         hashtags: props.hashtags,
         gifs: props.gifs,
@@ -18,7 +19,7 @@ const VideoPlayer = (props: IVideo) => {
         },
         safeZone: props.safeZone,
       }}
-      durationInFrames={6 * 30}
+      durationInFrames={10 * 30}
       compositionWidth={1080}
       compositionHeight={1920}
       fps={30}

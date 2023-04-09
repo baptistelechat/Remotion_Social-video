@@ -1,4 +1,15 @@
 #prompt {
   height: 100%;
-  width: calc((1080px / 4));
+  width: 100%;
+}
+
+h2 {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 8px;
 }

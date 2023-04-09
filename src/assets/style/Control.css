@@ -6,13 +6,13 @@
 .control {
   display: flex;
   flex-direction: row;
-  width: calc((1080px / 2));
   gap: 2rem;
 }
 
 .controlInput,
-.controlGif {
-  width: calc((1080px / 4));
+.controlGif,
+.controlSellBook {
+  width: calc((100% / 3));
 }
 
 .gifContainer {

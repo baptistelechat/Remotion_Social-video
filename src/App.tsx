@@ -4,8 +4,19 @@ import "./App.css";
 import Control from "./components/Control";
 import { BookHashtags } from "./data/constants/BookHashtags";
 import Prompt from "./components/Prompt";
+import { useDisclosure } from "@mantine/hooks";
+import { Button } from "@mantine/core";
+import { IconTerminal2 } from "@tabler/icons-react";
 
 function App() {
+  const [bookName, setBookName] = useState("Lorem Ipsum");
+  const [author, setAuthor] = useState("John Doe");
+  const [image1, setImage1] = useState(
+    "https://picsum.photos/seed/manga/1080/1920"
+  );
+  const [image2, setImage2] = useState(
+    "https://picsum.photos/seed/manga/1080/1920"
+  );
   const [bookType, setBookType] = useState("Mangas");
   const [hashtagsList, setHashtagsList] = useState(BookHashtags);
   const [hashtags, setHashtags] = useState<string[]>([]);
@@ -23,18 +34,31 @@ function App() {
   const [gif3, setGif3] = useState(
     "https://media4.giphy.com/media/ge9Ep3RJLGlNEn0UfC/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s"
   );
+  const [gif4, setGif4] = useState(
+    "https://media4.giphy.com/media/dup6jDyj6Yk6z5M8nN/giphy.gif?cid=101f51ddte6iw3ov1vw449uc6xiab3vpkktse5njjssvvz9i&rid=giphy.gif&ct=s"
+  );
+
+  const [openedModal, { open, close }] = useDisclosure(false);
 
   return (
     <div className="app">
       <Control
+        userName={userName}
+        setUserName={setUserName}
+        bookName={bookName}
+        setBookName={setBookName}
+        author={author}
+        setAuthor={setAuthor}
+        image1={image1}
+        setImage1={setImage1}
+        image2={image2}
+        setImage2={setImage2}
         bookType={bookType}
         setBookType={setBookType}
         hashtagsList={hashtagsList}
         setHashtagsList={setHashtagsList}
         hashtags={hashtags}
         setHashtags={setHashtags}
-        userName={userName}
-        setUserName={setUserName}
         bgColor={bgColor}
         setBgColor={setBgColor}
         textColor={textColor}
@@ -46,29 +70,48 @@ function App() {
         setGif1={setGif1}
         setGif2={setGif2}
         setGif3={setGif3}
+        setGif4={setGif4}
       />
-      <VideoPlayer
-        userName={userName}
-        bookType={bookType}
-        hashtags={hashtags}
-        gifs={[gif1, gif2, gif3]}
-        theme={{
-          bgColor,
-          textColor,
-          accentColor,
-        }}
-        safeZone={safeZone}
-      />
+      <div className="videoContainer">
+        <VideoPlayer
+          userName={userName}
+          bookInfo={{
+            title: bookName,
+            author: author,
+            images: [image1, image2],
+          }}
+          bookType={bookType}
+          hashtags={hashtags}
+          gifs={[gif1, gif2, gif3, gif4]}
+          theme={{
+            bgColor,
+            textColor,
+            accentColor,
+          }}
+          safeZone={safeZone}
+        />
+        <Button leftIcon={<IconTerminal2 />} onClick={open}>
+          Afficher le Prompt
+        </Button>
+      </div>
       <Prompt
+        userName={userName}
+        bookName={bookName}
+        author={author}
+        image1={image1}
+        image2={image2}
         bookType={bookType}
         hashtags={hashtags}
-        userName={userName}
         bgColor={bgColor}
         textColor={textColor}
         accentColor={accentColor}
         gif1={gif1}
         gif2={gif2}
         gif3={gif3}
+        gif4={gif4}
+        openedModal={openedModal}
+        openModal={open}
+        closeModal={close}
       />
     </div>
   );

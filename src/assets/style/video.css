@@ -92,6 +92,10 @@ video {
   padding: 24px;
 }
 
+#safeZoneContainer {
+  z-index: 2;
+}
+
 #topSafeZone {
   background-color: rgba(0, 0, 0, 50%);
   position: absolute;
@@ -135,11 +139,15 @@ video {
   font-weight: 700;
 }
 
-#userName {
+#userName,
+#bookInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 24px;
+}
+
+#userName {
   position: absolute;
   top: calc(10% + 16px);
   left: 64px;
@@ -148,9 +156,45 @@ video {
   font-weight: 700;
 }
 
-#userNameIcon {
+#bookInfo {
+  position: absolute;
+  top: calc(10% + 350px);
+  left: 64px;
+  text-align: left;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+#userNameIcon,
+#bookInfoIcon {
   height: 80px;
   width: 80px;
+}
+.bookInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#bookInfoAuthor {
+  font-size: 38px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+#bookImageContainer {
+  position: absolute;
+  bottom: calc(20% + 66px);
+  right: calc(20% + 20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 60px;
+  gap: 60px;
+}
+
+#image1,
+#image2 {
+  width: calc((100% - 120px) / 2);
 }
 
 #hashtags {
@@ -169,20 +213,25 @@ video {
   max-width: 80%;
 }
 
-#gifs > canvas:nth-child(1) {
+#gifs > canvas:nth-child(1),
+#gif4 {
   position: absolute;
-  top: calc(10% + 16px);
-  right: 64px;
+  top: calc(10% + 32px);
+  right: 72px;
 }
 
 #gifs > canvas:nth-child(2) {
   position: absolute;
-  bottom: calc(20% + 40px);
-  left: 64px;
+  bottom: calc(20% + 80px);
+  left: 72px;
 }
 
 #gifs > canvas:nth-child(3) {
   position: absolute;
-  bottom: calc(20% + 40px);
-  right: calc(20% + 16px);
+  bottom: calc(20% + 80px);
+  right: calc(20% + 32px);
+}
+
+#gif4 {
+  height: 300px;
 }
