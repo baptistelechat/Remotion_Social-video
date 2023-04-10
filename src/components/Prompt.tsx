@@ -8,6 +8,7 @@ interface IPromptProps {
   author: string;
   image1: string;
   image2: string;
+  price: string;
   hashtags: string[];
   userName: string;
   bgColor: string;
@@ -38,10 +39,11 @@ const Prompt = (props: IPromptAndModalProps) => {
       "${props.image1}",
       "${props.image2}"
     ],
+    price: "${props.price}"
   },
   bookType:"${props.bookType}",
   hashtags:[${props.hashtags.map((hashtag, index) => `"${hashtag}"`)}],
-  gif:[
+  gifs:[
     "${props.gif1}",
     "${props.gif2}",
     "${props.gif3}",

@@ -17,7 +17,7 @@ const SellBook = (props: ISellBookProps) => {
     frame,
   });
 
-  const translateX = interpolate(frame, [0, 100, 110], [0, 0, -width], {
+  const translateXGifLeft = interpolate(frame, [0, 165, 180], [0, 0, -width], {
     extrapolateRight: "clamp",
   });
 
@@ -25,7 +25,7 @@ const SellBook = (props: ISellBookProps) => {
     <div
       id="bookInfo"
       style={{
-        transform: `scale(${scale})`,
+        transform: `scale(${scale}) translateX(${translateXGifLeft}px)`,
       }}
     >
       <ThemeIcon id="bookInfoIcon" radius={"100%"} color={props.textColor}>

@@ -17,6 +17,7 @@ function App() {
   const [image2, setImage2] = useState(
     "https://picsum.photos/seed/manga/1080/1920"
   );
+  const [price, setPrice] = useState("99.55");
   const [bookType, setBookType] = useState("Mangas");
   const [hashtagsList, setHashtagsList] = useState(BookHashtags);
   const [hashtags, setHashtags] = useState<string[]>([]);
@@ -53,6 +54,8 @@ function App() {
         setImage1={setImage1}
         image2={image2}
         setImage2={setImage2}
+        price={price}
+        setPrice={setPrice}
         bookType={bookType}
         setBookType={setBookType}
         hashtagsList={hashtagsList}
@@ -79,6 +82,7 @@ function App() {
             title: bookName,
             author: author,
             images: [image1, image2],
+            price: price,
           }}
           bookType={bookType}
           hashtags={hashtags}
@@ -100,6 +104,7 @@ function App() {
         author={author}
         image1={image1}
         image2={image2}
+        price={price}
         bookType={bookType}
         hashtags={hashtags}
         bgColor={bgColor}

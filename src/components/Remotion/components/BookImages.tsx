@@ -1,15 +1,23 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 interface IBookImages {
   images: string[];
 }
 
 const BookImages = (props: IBookImages) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, width } = useVideoConfig();
 
   const scale = spring({
     fps,
     frame,
+  });
+
+  const translateXGifLeft = interpolate(frame, [0, 150, 165], [0, 0, -width], {
+    extrapolateRight: "clamp",
+  });
+
+  const translateXGifRight = interpolate(frame, [0, 150, 165], [0, 0, width], {
+    extrapolateRight: "clamp",
   });
 
   return (
@@ -19,7 +27,7 @@ const BookImages = (props: IBookImages) => {
         src={props.images[0]}
         alt="book image 1"
         style={{
-          transform: `translate(-20px) scale(${scale})`,
+          transform: `scale(${scale}) translateX(${translateXGifLeft}px)`,
         }}
       />
       <img
@@ -27,7 +35,7 @@ const BookImages = (props: IBookImages) => {
         src={props.images[1]}
         alt="book image 2"
         style={{
-          transform: `translate(-20px) scale(${scale})`,
+          transform: `scale(${scale}) translateX(${translateXGifRight}px)`,
         }}
       />
     </div>

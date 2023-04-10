@@ -5,6 +5,7 @@ export interface IVideo {
     title: string;
     author: string;
     images: string[];
+    price: string;
   };
   hashtags: string[];
   gifs: string[];

@@ -19,7 +19,7 @@ const VideoPlayer = (props: IVideo) => {
         },
         safeZone: props.safeZone,
       }}
-      durationInFrames={10 * 30}
+      durationInFrames={18 * 30}
       compositionWidth={1080}
       compositionHeight={1920}
       fps={30}

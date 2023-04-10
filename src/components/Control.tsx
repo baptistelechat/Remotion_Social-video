@@ -4,6 +4,7 @@ import {
   Switch,
   Select,
   MultiSelect,
+  NumberInput,
 } from "@mantine/core";
 import "../assets/style/Control.css";
 import { BookTypes } from "../data/constants/BookTypes";
@@ -20,6 +21,8 @@ interface IControlProps {
   setImage1: React.Dispatch<React.SetStateAction<string>>;
   image2: string;
   setImage2: React.Dispatch<React.SetStateAction<string>>;
+  price: string;
+  setPrice: React.Dispatch<React.SetStateAction<string>>;
   setBookType: React.Dispatch<React.SetStateAction<string>>;
   hashtagsList: IBookHashtags[];
   setHashtagsList: React.Dispatch<React.SetStateAction<IBookHashtags[]>>;
@@ -146,6 +149,17 @@ const Control = (props: IControlProps) => {
             marginBottom: "8px",
           }}
         />
+        <TextInput
+          label="Prix de vente"
+          value={props.price}
+          onChange={(event) =>
+            props.setPrice(event.currentTarget.value)
+          }
+          style={{
+            marginBottom: "8px",
+          }}
+        />
+
         <GiphySearch label={"Gif n°4"} setGifs={props.setGif4} />
       </div>
     </div>

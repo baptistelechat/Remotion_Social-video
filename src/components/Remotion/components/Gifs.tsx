@@ -24,29 +24,29 @@ const Gifs = (props: IGifsProps) => {
 
   return (
     <div id="gifs">
-      <Gif
+      <img
+        id="gif1"
         src={props.gifs[0]}
         height={300}
         style={{
           transform: `scale(${scale}) translateX(${translateXGifRight}px)`,
         }}
-        fit="contain"
       />
-      <Gif
+      <img
+        id="gif2"
         src={props.gifs[1]}
         height={300}
         style={{
           transform: `scale(${scale}) translateX(${translateXGifLeft}px)`,
         }}
-        fit="contain"
       />
-      <Gif
+      <img
+        id="gif3"
         src={props.gifs[2]}
         height={300}
         style={{
           transform: `scale(${scale}) translateX(${translateXGifRight}px)`,
         }}
-        fit="contain"
       />
     </div>
   );

@@ -6,7 +6,7 @@ export const RemotionRoot = () => {
     <>
       <Composition
         component={Video}
-        durationInFrames={10 * 30}
+        durationInFrames={18 * 30}
         width={1080}
         height={1920}
         fps={30}
@@ -20,6 +20,7 @@ export const RemotionRoot = () => {
               "https://picsum.photos/seed/manga/1080/1920",
               "https://picsum.photos/1080,1920",
             ],
+            price: "99.55",
           },
           bookType: "Mangas",
           hashtags: ["Lorem", "Ipsum"],

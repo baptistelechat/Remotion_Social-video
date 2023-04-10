@@ -8,27 +8,28 @@ import path from "path";
 import { IVideo } from "./data/interfaces/IVideo";
 
 const prompt: IVideo = {
-  userName: "JohnDoe",
+  userName: "Himufi",
   bookInfo: {
-    title: "LoremIpsum LoremIpsum LoremIpsum",
-    author: "John Doe",
+    title: "Saint Seiya Dark Wing - Tome 1",
+    author: "Masami Kurumada, Kenji Saito",
     images: [
-      "https://picsum.photos/seed/manga/1080/1920",
-      "https://picsum.photos/seed/manga/1080/1920",
+      "https://images1.vinted.net/t/02_01342_5FRebtYKDNG1BQKhwCbsQE7H/f800/1679654713.jpeg?s=dbcc73e7efb3f585d8836b061222b2f54a46b912",
+      "https://images1.vinted.net/t/03_002da_bu1wiQ81fTfzy8t2zGcPhshn/f800/1679654713.jpeg?s=6d8c2d394b0b5d22267d7f8fc60a93c5c777ab9d",
     ],
+    price: "99.55",
   },
   bookType: "Mangas",
-  hashtags: ["Lorem", "Ipsum"],
+  hashtags: ["Shonens", "MangaLovers", "MangaCollection"],
   gifs: [
-    "https://media2.giphy.com/media/Qyml5wziJeHreuOdzu/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
-    "https://media3.giphy.com/media/Q7pDtp0bIvJFgRsHHN/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
-    "https://media4.giphy.com/media/ge9Ep3RJLGlNEn0UfC/giphy.gif?cid=101f51ddtlww235h46itahp398pqkrg0prcyyyez9w3qjuej&rid=giphy.gif&ct=s",
-    "https://media4.giphy.com/media/dup6jDyj6Yk6z5M8nN/giphy.gif?cid=101f51ddte6iw3ov1vw449uc6xiab3vpkktse5njjssvvz9i&rid=giphy.gif&ct=s",
+    "https://media0.giphy.com/media/XSmHWLpvdycR6xukzC/giphy.gif?cid=101f51ddrbkz0soejhx906858tfdop4g6e264ozb318h1cl3&rid=giphy.gif&ct=s",
+    "https://media2.giphy.com/media/WP2r0a9qMP2yBtqwKa/giphy.gif?cid=101f51dd9enq8ilgl16qmfetw9wf2gaduvfrzyknqkqhu0cf&rid=giphy.gif&ct=s",
+    "https://media3.giphy.com/media/sJygYsK2pQ65vMrWcv/giphy.gif?cid=101f51dd9enq8ilgl16qmfetw9wf2gaduvfrzyknqkqhu0cf&rid=giphy.gif&ct=s",
+    "https://media3.giphy.com/media/MasfNVDb2lkeB44QIC/giphy.gif?cid=101f51ddrbkz0soejhx906858tfdop4g6e264ozb318h1cl3&rid=giphy.gif&ct=s",
   ],
   theme: {
     bgColor: "#ffffff",
     textColor: "#3C2945",
-    accentColor: "#9820D1",
+    accentColor: "#ed6145",
   },
   safeZone: false,
 };

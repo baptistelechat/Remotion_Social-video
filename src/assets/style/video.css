@@ -140,7 +140,8 @@ video {
 }
 
 #userName,
-#bookInfo {
+#bookInfo,
+#cta {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -148,18 +149,21 @@ video {
 }
 
 #userName {
-  position: absolute;
-  top: calc(10% + 16px);
-  left: 64px;
   text-align: left;
   font-size: 56px;
   font-weight: 700;
 }
 
+#userName {
+  position: absolute;
+  top: calc(10% + 32px);
+  left: 72px;
+}
+
 #bookInfo {
   position: absolute;
   top: calc(10% + 350px);
-  left: 64px;
+  left: 72px;
   text-align: left;
   font-size: 56px;
   font-weight: 700;
@@ -183,8 +187,8 @@ video {
 
 #bookImageContainer {
   position: absolute;
-  bottom: calc(20% + 66px);
-  right: calc(20% + 20px);
+  bottom: calc(20% + 100px);
+  right: calc(20% + 40px);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -197,6 +201,15 @@ video {
   width: calc((100% - 120px) / 2);
 }
 
+#bookInfoPrice {
+  position: absolute;
+  top: calc(10% + 175px);
+  left: 72px;
+  text-align: right;
+  font-size: 72px;
+  font-weight: 700;
+}
+
 #hashtags {
   display: flex;
   flex-direction: row;
@@ -205,7 +218,7 @@ video {
   gap: 16px;
   position: absolute;
   bottom: calc(20% + 16px);
-  left: 64px;
+  left: 72px;
   text-align: left;
   font-style: italic;
   font-size: 40px;
@@ -213,25 +226,46 @@ video {
   max-width: 80%;
 }
 
-#gifs > canvas:nth-child(1),
+#gif1,
 #gif4 {
+  height: 300px;
   position: absolute;
   top: calc(10% + 32px);
   right: 72px;
 }
 
-#gifs > canvas:nth-child(2) {
+#gif2 {
+  height: 300px;
   position: absolute;
   bottom: calc(20% + 80px);
   left: 72px;
 }
 
-#gifs > canvas:nth-child(3) {
+#gif3 {
+  height: 300px;
   position: absolute;
   bottom: calc(20% + 80px);
   right: calc(20% + 32px);
 }
 
-#gif4 {
-  height: 300px;
+#cta {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: "flex";
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+#vintedUsername {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
 }

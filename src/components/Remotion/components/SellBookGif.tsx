@@ -1,6 +1,4 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { Gif } from "@remotion/gif";
-import { Text } from "@mantine/core";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 
 interface ISellBookGifProps {
   gif: string;
@@ -8,7 +6,11 @@ interface ISellBookGifProps {
 
 const SellBookGif = (props: ISellBookGifProps) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, width } = useVideoConfig();
+
+  const translateXGifRight = interpolate(frame, [0, 150, 165], [0, 0, width], {
+    extrapolateRight: "clamp",
+  });
 
   const scale = spring({
     fps,
@@ -20,7 +22,7 @@ const SellBookGif = (props: ISellBookGifProps) => {
       id="gif4"
       src={props.gif}
       style={{
-        transform: `scale(${scale}) `,
+        transform: `scale(${scale}) translateX(${translateXGifRight}px)`,
       }}
     />
   );
